@@ -1,0 +1,2 @@
+# eqnsol
+Equinoxes and Solstices
