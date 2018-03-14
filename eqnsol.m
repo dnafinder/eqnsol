@@ -36,7 +36,7 @@ function EQ=eqnsol(varargin)
 
 %Input Error handling
 p = inputParser;
-addOptional(p,'Y',year(now),@(x) isscalar(x) && isnumeric(x) && isreal(x) && isfinite(x) && fix(x)==x);
+addOptional(p,'Y',year(now),@(x) validateattributes(x,{'numeric'},{'scalar','real','finite','integer','nonnan','positive'}))
 addOptional(p,'verbose',1,@(x) x==0 || x==1)
 parse(p,varargin{:});
 Y=p.Results.Y; verbose=logical(p.Results.verbose);
